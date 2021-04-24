@@ -8,16 +8,18 @@ generator client {
 }
 
 model Channel {
-  id      Int    @id @default(autoincrement())
+  id      Int     @id @default(autoincrement())
   name    String
-  api_key String @unique
+  api_key String  @unique
   field1  String
   field2  String
   field3  String
   field4  String
+  Feeds   Feeds[]
 }
 
-model Feed {
+model Feeds {
+  channel    Channel  @relation(fields: [channelId], references: [id])
   id         Int      @id @default(autoincrement())
   created_at DateTime
   field1     String?
@@ -25,5 +27,6 @@ model Feed {
   field3     String?
   field4     String?
 
+  channelId Int
   @@index([created_at])
 }
