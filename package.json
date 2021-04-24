@@ -7,7 +7,7 @@
     "dev": "nodemon src/index.ts",
     "start": "node dist/index.js",
     "build": "tsc --project .",
-    "start-prod": "yarn build && yarn start",
+    "start-prod": "yarn prisma-generate && yarn prisma-migrate && yarn prisma-seed && yarn build && yarn start",
     "prisma-generate": "prisma generate",
     "prisma-migrate": "prisma migrate deploy",
     "prisma-seed": "prisma db seed --preview-feature"
