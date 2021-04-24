@@ -7,7 +7,7 @@ const port = process.env.PORT || 3000
 const app = express()
 
 // routing
-app.get("/channels/:id/feeds.json", feeds)
+app.get("/channels/:id(\\d+)/feeds.json", feeds)
 app.get("/update(.json)?", update)
 
 app.get("/", (_, res) => {
