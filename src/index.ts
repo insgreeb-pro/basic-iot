@@ -1,10 +1,14 @@
 import * as express from "express"
 
 import { feeds } from "./controller/feeds"
+import { logger } from "./middleware/logger"
 import { update } from "./controller/update"
 
 const port = process.env.PORT || 3000
 const app = express()
+
+// Middleware
+app.use(logger)
 
 // routing
 app.get("/channels/:id(\\d+)/feeds.json", feeds)
@@ -16,4 +20,9 @@ app.get("/", (_, res) => {
   })
 })
 
-app.listen(port, () => console.log(`✔ Server run on http://localhost:${port}`))
+app.listen(port, () =>
+  console.log(
+    `[${new Date().toISOString()}]`,
+    `✔ Server run on http://localhost:${port}`
+  )
+)
