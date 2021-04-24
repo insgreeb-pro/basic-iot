@@ -1,0 +1,29 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DB_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Channel {
+  id      Int    @id @default(autoincrement())
+  name    String
+  api_key String @unique
+  field1  String
+  field2  String
+  field3  String
+  field4  String
+}
+
+model Feed {
+  id         Int      @id @default(autoincrement())
+  created_at DateTime
+  field1     String?
+  field2     String?
+  field3     String?
+  field4     String?
+
+  @@index([created_at])
+}
