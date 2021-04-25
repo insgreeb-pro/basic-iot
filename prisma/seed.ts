@@ -18,7 +18,7 @@ const main = async () => {
     const api_key = createHash("md5").update(channel.name).digest("hex")
     await db.channel.upsert({
       where: { id: channel.id },
-      update: channel,
+      update: { ...channel, ...sensors, api_key },
       create: { ...channel, ...sensors, api_key },
     })
     console.log(`[${channel.id}]:${channel.name}`, "--- api_key:", api_key)
