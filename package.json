@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon src/index.ts",
     "start": "node dist/index.js",
-    "build": "tsc --project .",
+    "build": "rm -rf dist && tsc --project .",
     "start-prod": "yarn prisma-generate && yarn prisma-migrate && yarn prisma-seed && yarn build && yarn start",
     "prisma-generate": "prisma generate",
     "prisma-migrate": "prisma migrate dev --name init && prisma migrate deploy",
@@ -36,10 +36,5 @@
     "prisma": "^2.21.2",
     "ts-node": "^9.1.1",
     "typescript": "^4.2.4"
-  },
-  "nodemonConfig": {
-    "events": {
-      "restart": "ts-node src/scripts/restart.ts"
-    }
   }
 }
