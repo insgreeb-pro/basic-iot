@@ -3,6 +3,7 @@
 ## Read Data Sensor
 
 Endpoint: `/channels/<channel_id>/feeds.json`
+
 Params:
 
 - **channel_id** - id channel
@@ -46,6 +47,7 @@ Example Response:
 ## Upload Data Sensor
 
 Endpoint: `/update.json`
+
 Queries:
 
 - **api_key** - _required_. api key dari channel.
