@@ -1,5 +1,13 @@
-[
-  { "id": 1, "name": "Raspi 1" },
-  { "id": 2, "name": "Raspi 2" },
-  { "id": 3, "name": "Raspi 3" }
-]
+{
+  "sensors": {
+    "field1": "Sensor 1",
+    "field2": "Sensor 2",
+    "field3": "Sensor 3",
+    "field4": "Sensor 4"
+  },
+  "channels": [
+    { "id": 1, "name": "Raspi 1" },
+    { "id": 2, "name": "Raspi 2" },
+    { "id": 3, "name": "Raspi 3" }
+  ]
+}
